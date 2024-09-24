@@ -2,7 +2,7 @@ package arc.haldun.quotes;
 
 public class Quote {
 
-    public static final int MAGIC_NUMBER = 0x746F7571;
+    public static final int MAGIC_NUMBER = 0x71756F74;
 
     private String content;
     private String sourceType;
