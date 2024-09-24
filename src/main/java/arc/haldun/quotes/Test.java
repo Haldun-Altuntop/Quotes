@@ -39,10 +39,18 @@ public class Test {
                 new Source("Yeraltından Notlar", "Dostoyevski")
         );
 
+        QuoteFile quoteFile = new QuoteFile("newTest.quot");
+        quoteFile.write(q);
+        quoteFile.write(q2);
+        quoteFile.write(q3);
+
         QuotManager localQuotes = new QuotManager(new LocalQuotFile());
         // print qoutes
 
-        Quote[] qs = localQuotes.select();
+        Quote[] qs = new Quote[3];
+        qs[0] = quoteFile.read();
+        qs[1] = quoteFile.read();
+        qs[2] = quoteFile.read();
 
         for (Quote q_ : qs) {
             System.out.println("Quot:");
