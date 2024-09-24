@@ -113,9 +113,10 @@ public class QuoteFile {
 
     private void initRandomAccessFile() {
 
-        boolean writeMagicNumber;
+        boolean writeMagicNumber = false;
 
-        if (!(writeMagicNumber = !file.exists())) {
+        if (!file.exists()) {
+            writeMagicNumber = true;
             try {
                 boolean res = file.createNewFile();
                 if (!res) {
